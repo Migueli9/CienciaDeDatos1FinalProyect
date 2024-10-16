@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIENCIA DE DATOS</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Arial", sens-serif;
+            background: linear-gradient(to bottom, #e0e0e0, #808080)
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar a{
+            display: block;
+            padding: 10px 0;
+            color: #333;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+            color: #000;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        h1 {
+            font-family: "Courier New", monospace;
+        }
+        table{
+            width: 50%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Proyecto final de ciencia de datos 1</h1>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Temas a ver</h3>
+            <a href="#tema1">Webscraping</a>
+            <a href="#tema2">Tecnicas de visualizacion</a>
+            <a href="#tema3">Medidas de tendencia central</a>
+            <a href="#tema4">Medidas de dispersion</a>
+            <a href="#tema5">Conclusiones</a>
+        </div>
+        <div class="content">
+            <div class="section" id="tema1">
+                <h2>Webscraping</h2>
+                <p>El web scraping es una técnica utilizada para extraer información de sitios web de forma automatizada. 
+                En lugar de copiar manualmente datos de una página web, el web scraping permite a los desarrolladores usar scripts o programas para
+                obtener grandes cantidades de datos de manera rápida y estructurada.</p>
+                <h3>¿Cómo funciona?</h3>
+                <p>El proceso básico del web scraping implica:</p>
+                <ol>
+                    <li>Enviar una solicitud a una página web: Se usa un programa (como requests en Python) 
+                        para hacer una solicitud HTTP al sitio web del que se desea extraer información.</li>
+                    <li>Obtener el contenido HTML: El servidor responde con el código HTML de la página.</li>
+                    <li>Extraer la información deseada: Con bibliotecas como BeautifulSoup (Python), se puede analizar 
+                        y extraer datos específicos, como texto, imágenes, enlaces, tablas, etc., de la estructura HTML.</li>
+                    <li>Almacenar los datos: Los datos extraídos se pueden guardar en diferentes formatos, 
+                        como bases de datos, archivos CSV o JSON, dependiendo de la aplicación.</li>
+                </ol>
+                <h3><b>Ejemplo basico en python con BeautifulSoup</b></h3>
+                <img src="Screenshot 2024-10-14 153630.PNG" style="display: block; margin: 0 auto;">
+                <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1_h5jzSbCvdVFSNAMHaFAqipsc5_YSKrg?usp=sharing"
+                    target="_blank"> Pruebame</a></p>
+                <h3>Casos de uso:</h3>
+                <ul>
+                    <li><strong>investigacion de mercado:</strong> Obtener información de productos y precios de varias tiendas en línea.</li>
+                    <li><strong>Análisis de datos: </strong>Extraer datos de artículos de noticias, redes sociales o foros para su posterior 
+                        análisis.</li>
+                    <li><strong>Agregadores de información: </strong>Creación de plataformas que reúnen datos de varias fuentes, como buscadores 
+                        de vuelos o comparadores de precios.</li>
+                </ul>
+            </div>
+            <div class="section" id="tema2">
+                <h2>Tecnicas de visualizacion</h2>
+                <p>
+                    La visualización de datos es una parte fundamental en la ciencia de datos, ya que permite comunicar de manera clara y eficiente 
+                    los hallazgos obtenidos de los análisis. Existen diversas técnicas que se utilizan dependiendo del tipo de datos y la 
+                    información que se quiera destacar. A continuación, te explico algunas de las técnicas más comunes y efectivas:
+                </p>
+                <ol>
+                    <li><h3>Gráficos de barras (Bar Charts)</h3></li>
+                    <p>Los gráficos de barras son ideales para comparar diferentes categorías. Cada barra representa una categoría, y su altura o longitud 
+                        indica el valor que representa.</p>
+                        <ul>
+                            <li><strong>Cuándo usarlo: </strong>Comparar cantidades en diferentes grupos.</li>
+                            <li><strong>Ejemplo: </strong>Comparar ventas por producto, frecuencia de eventos en diferentes grupos.</li>
+                        </ul>
+                    <p><strong>Herramientas Comunes:</strong></p>
+                    <ul>
+                        <li>Matplotlib (Python)</li>
+                        <li>Excel</li>
+                        <li>Power BI</li>
+                    </ul>
+                    <li><h3>Histogramas</h3></li>
+                    <p>Un histograma es similar a un gráfico de barras, pero se usa para mostrar la distribución de un conjunto de datos continuos. 
+                        Se agrupan los valores en rangos (bins), y la altura de cada barra indica la frecuencia de datos en ese rango.</p>
+                    <ul>
+                        <li><strong>Cuando usarlo: </strong>Mostrar la distribución de una variable numérica continua.</li>
+                        <li><strong>Ejemplo: </strong>Distribución de ingresos en una población, distribución de edades en un grupo.</li>
+                    </ul>
+                    <p><strong>Herramientas Comunes:</strong></p>
+                    <ul>
+                        <li>Matplotlib (Python)</li>
+                        <li>Excel</li>
+                    </ul>
+                    <li><h3>Graficos de pastel</h3></li>
+                    <p>Los gráficos de pastel muestran las proporciones de un todo. Cada sector representa una parte de un conjunto total.</p>
+                    <ul>
+                        <li><strong>Cuándo usarlo: </strong>Mostrar proporciones o porcentajes de un conjunto total.</li>
+                        <li><strong>Ejemplo </strong>Distribución de votos en una elección, participación de mercado por empresa.</li>
+                    </ul>
+                    <p><Strong>Herramientas Comunes: </Strong></p>
+                    <ul>
+                        <li>Matplotlib (Python)</li>
+                        <li>Excel</li>
+                    </ul>
+                </ol>
+                <p>Estas técnicas te permitirán analizar y comunicar datos de manera efectiva, dependiendo del tipo de análisis que estés realizando. 
+                    Cada técnica tiene su fortaleza, y es importante seleccionar la que mejor se ajuste al tipo de información que deseas transmitir.</p>
+                <p><b>Tabla de frecuencia:</b></p>
+                <img src="Screenshot 2024-10-14 175558.png" style="display: block;margin: 0 auto;">
+                <p style="text-align: center;"><a href="https://colab.research.google.com/drive/16hn39x_deu4H4phCGuDCf-WhYQT0zapj?usp=sharing" target="_blank">Pruebame</a></p>
+                <p><b>Graficos de barras (Bar charts):</b></p>
+                <img src="Screenshot 2024-10-14 211352.png" style="display: block; margin: 0 auto;">
+                <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1XNc4qd5NzuusSXXPETAmzvJG0DJ8L01A?usp=sharing" target="_blank">Pruebame</a></p>
+                <p><b>Graficos de pastel (Pie Charts):</b></p>
+                <img src="Screenshot 2024-10-14 213141.png" style="display: block; margin: 0 auto;">
+                <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1xEfjzP8lwG-uYb-xmkvmW4ldMviQ8psu?usp=sharing" target="_blank">Pruebame</a></p>
+                <p><b>Histograma:</b></p>
+                <img src="Screenshot 2024-10-14 214347.png" style="display: block; margin: 0 auto;">
+                <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1QIy0OLs3ODOK7dYPGngevczuh-H09SWp?usp=sharing" target="_blank">Pruebame</a></p>
+            </div>
+            <div class="section" id="tema3">
+                <h2>Medidas de tendencia central</h2>
+                <p>Las medidas de tendencia central son estadísticas que nos permiten describir el centro o punto medio de un conjunto de datos. Son útiles para resumir 
+                    una gran cantidad de datos en un solo valor representativo. Las tres medidas principales de tendencia central son la media, la mediana y la moda.</p>
+                <ol>
+                    <li><h3>Media (Promedio)</h3></li>
+                    <p>La media es el valor promedio de un conjunto de datos y se calcula sumando todos los valores y dividiendo el resultado por el número total de observaciones.</p>
+                    <p><b>Formula: </b></p>
+                    <img src="Screenshot 2024-10-15 123154.png" style="display: block; margin: 0 auto;">
+                    <p><b>Donde:</b></p>
+                    <p><i>xi</i> son los valores del conjunto de datos.</p>
+                    <p><i>n</i> es el numero total de observaciones.</p>
+                    <p><b>Ejemplo:</b></p>
+                    <p>Si tienes los datos: 10, 15, 20, 25, la media es:</p>
+                    <img src="Screenshot 2024-10-15 123807.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo: Calcular la media de un conjunto de datos de ingresos con python</b></p>
+                    <p>Supongamos que tienes un conjunto de datos que representa los ingresos mensuales (en dólares) de un grupo de personas, 
+                        y quieres calcular el <b>ingreso promedio.</b></p>
+                    <img src="Screenshot 2024-10-15 130542.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1q9w6_ANBn2-DuKrBxGivd_L5fj2XxRTm?usp=sharing" target="_blank">Pruebame</a></p>
+                    <li><h3>Mediana</h3></li>
+                    <p>La mediana es el valor que divide el conjunto de datos en dos partes iguales, de manera que la mitad de los datos son menores o iguales que la mediana, 
+                        y la otra mitad son mayores o iguales.</p>
+                    <p><b>¿Como se calcula?</b></p>
+                    <ul>
+                        <li>Si el número de datos es impar, la mediana es el valor del medio cuando los datos están ordenados.</li>
+                        <li>Si el número de datos es par, la mediana es el promedio de los dos valores centrales.</li>
+                    </ul>
+                    <p><b>Ejemplo:</b></p>
+                    <ul>
+                        <li>Para el conjunto de datos: 10, 15, 20, 25 (n = 4), ordenados:</li>
+                        <img src="Screenshot 2024-10-15 131223.png" style="display: block; margin: 0 auto;">
+                        <li>Para el conjunto: 10, 15, 20 (n = 3), la mediana es simplemente 15.</li>
+                    </ul>
+                    <p><b>Ejemplo: Calcular la mediana de un conjunto de datos de ingresos con python</b></p>
+                    <img src="Screenshot 2024-10-15 131743.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1ANyC1tWIF9W6JIN4KJPvA3JuqDQ5XhRX?usp=sharing" target="_blank">Pruebame</a></p>
+                    <li><h3>Moda</h3></li>
+                    <p>La moda es el valor o valores que aparecen con mayor frecuencia en un conjunto de datos. Un conjunto de datos puede tener una moda, más de una moda 
+                        o ninguna moda.</p>
+                    <p><b>Ejemplo:</b></p>
+                    <ul>
+                        <li>Para los datos: 10, 15, 15, 20, 25, la moda es 15 (porque aparece más veces).</li>
+                        <li>Si tienes: 10, 10, 15, 15, 20, 25, el conjunto es <b>bimodal</b> (dos modas: 10 y 15).</li>
+                        <li>Si los valores son todos diferentes, no hay moda.</li>
+                    </ul>
+                    <p><b>Ejemplo: Calcular la moda de un conjunto de datos de ingresos con python</b></p>
+                    <img src="Screenshot 2024-10-15 132818.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/12ScKBRQxoLI7UcGe-jYahMi0FQxc7Q5S?usp=sharing" target="_blank">Pruebame</a></p>
+                </ol>
+                <h2>Resumen de caracteristicas:</h2>
+                <table>
+                    <tr>
+                        <th>Medida</th>
+                        <th>caracteristicas principales</th>
+                        <th>Cuando usarla</th>
+                    </tr>
+                    <tr>
+                        <td>Media</td>
+                        <td>Afectada por todos los datos, sensible a valores extremos.</td>
+                        <td>Cuando los datos no tienen outliers y quieres un promedio general.</td>
+                    </tr>
+                    <tr>
+                        <td>Mediana</td>
+                        <td>No afectada por outliers, solo toma en cuenta el valor central.</td>
+                        <td>Cuando los datos tienen valores extremos o distribuciones asimétricas.</td>
+                    </tr>
+                    <tr>
+                        <td>Moda</td>
+                        <td>Representa el valor más frecuente, útil para datos categóricos.</td>
+                        <td>Cuando deseas conocer la frecuencia de ocurrencia de los valores.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section" id="tema4">
+                <h2>Medidas de dispersion</h2>
+                <p>Las medidas de dispersión son estadísticas que describen qué tan dispersos o esparcidos están los datos en un conjunto. 
+                    Complementan a las medidas de tendencia central (como la media, mediana y moda), ya que no solo indican el valor central de 
+                    los datos, sino también qué tan lejos o cerca están los datos de ese valor central. Entre las medidas de dispersión más 
+                    comunes tenemos:</p>
+                <ol>
+                    <li><h3>Rango</h3></li>
+                    <p>El rango es la diferencia entre el valor más alto y el valor más bajo en un conjunto de datos.</p>
+                    <p><b>Formula:</b></p>
+                    <img src="Screenshot 2024-10-15 185121.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo:</b></p>
+                    <p>Si tienes los valores: 10, 15, 20, 25, 30, el rango es:</p>
+                    <img src="Screenshot 2024-10-15 185338.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo de rango con Python</b></p>
+                    <img src="Screenshot 2024-10-15 185925.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/135vUL-OPHw4P2dO9xEcXeTIKpQgySAM2?usp=sharing" target="_blank">Pruebame</a></p>
+                    <li><h3>Varianza</h3></li>
+                    <p>La varianza mide la dispersión de los datos con respecto a la media. Indica cuánto varían los valores en 
+                        un conjunto de datos en relación con el promedio. Es el promedio de los cuadrados de las diferencias entre cada valor y la media.</p>
+                    <p><b>Formula:</b></p>
+                    <img src="Screenshot 2024-10-15 190259.png" style="display: block; margin: 0 auto;">
+                    <p><b>Donde:</b></p>
+                    <ul>
+                        <li><i>xi</i> son los valores del conjunto de datos.</li>
+                        <li><i>x</i> es la media.</li>
+                        <li><i>n</i> es el numero de observaciones.</li>
+                    </ul>
+                    <p><b>Ejemplo:</b></p>
+                    <p>Supongamos que tenemos los datos: 10, 12, 14, 16, 18. Primero calculamos la media:</p>
+                    <img src="Screenshot 2024-10-15 190635.png" style="display: block; margin: 0 auto;">
+                    <p>Ahora, calculamos la varianza:</p>
+                    <img src="Screenshot 2024-10-15 190751.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo: Calcular la varianza usando NumPy</b></p>
+                    <img src="Screenshot 2024-10-15 191248.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1GCbqBYdtAprIVLO8Y7_tapBxzw0-pmqG?usp=sharing" target="_blank">Pruebame</a></p>
+                    <li><h3>Desviacion estandar</h3></li>
+                    <p>La desviación estándar es la raíz cuadrada de la varianza. Al estar en las mismas unidades que los datos originales, 
+                        es más fácil de interpretar.</p>
+                    <p><b>Formula:</b></p>
+                    <img src="Screenshot 2024-10-15 191729.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo:</b></p>
+                    <p>Usando el ejemplo anterior, donde la varianza es 8, la desviación estándar sería:</p>
+                    <img src="Screenshot 2024-10-15 191854.png" style="display: block; margin: 0 auto;">
+                    <p><b>Ejemplo: Calcular la desviacion estandar usando NumPy</b></p>
+                    <img src="Screenshot 2024-10-15 192524.png" style="display: block; margin: 0 auto;">
+                    <p style="text-align: center;"><a href="https://colab.research.google.com/drive/1ro454MteVQqTOxXm2hj5fRYgXvbrAjxs?usp=sharing" target="_blank">Pruebame</a></p>
+                </ol>
+                <p><b>Resumen de las medidas de dispersion:</b></p>
+                <table>
+                    <tr>
+                        <th>Medida</th>
+                        <th>¿Que mide?</th>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                    </tr>
+                    <tr>
+                        <td>Rango</td>
+                        <td>Diferencia entre el valor máximo y mínimo</td>
+                        <td>Fácil de calcular</td>
+                        <td>Afectado por valores extremos</td>
+                    </tr>
+                    <tr>
+                        <td>Varianza</td>
+                        <td>Promedio de los cuadrados de las diferencias con la media</td>
+                        <td>Usa todos los datos</td>
+                        <td>Difícil de interpretar por estar al cuadrado</td>
+                    </tr>
+                    <tr>
+                        <td>Desviación estándar</td>
+                        <td>Raíz cuadrada de la varianza (dispersión promedio)</td>
+                        <td>Fácil de interpretar, en las mismas unidades</td>
+                        <td>Afectada por valores extremos</td>
+                    </tr>
+                </table>  
+            </div>
+            <div class="section" id="tema5">
+                <h2>Conclusiones</h2>
+                <p>He explorado varios conceptos clave en la ciencia de datos, cubriendo temas como el Webscraping que es basicamente tomar informacion de una 
+                    pagina en la web, siempre cuando me den persmiso de acceder a esos datos. Otro tema tambien visto, fueron las tecnicas de visualizacion de datos 
+                    donde aprendi que con datos y python y ayuda de unas librerias tales como pandas y Matplotlib puedo crear graficos, tales como la grafica de barras,
+                    graficas de pastel, tabla de frecuencias, entre otros. Otro tema fue la medida de tendencia central donde explore y practique como calcular la media, 
+                    mediana y moda utilizando python, y hacer mas facil esta tarea. Y el ultimo tema de este proyecto, fueron las medidas de dispersion, donde vimos como
+                    calcular el rango, la varianza, y la desviacion estandar. Todos estos temas son basicamente de estadistica, pero la principal funcion de la estadistica
+                    es predecir sucesos mediante los datos, y utilizando las tecnologias hacen un mejor trabajo y mas sencillo. De igual manera me gusto bastante esta 
+                    practica ya que, practique bastante en HTML y algo de CSS y que ya ni recordaba mucho lo que tuve que refrescar un poco mi memoria, fue un buen reto y trate 
+                    de hacer mi mejor esfuerzo.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
